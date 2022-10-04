@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-family: "Silkscreen" !important;
+  overflow-x: hidden;
+  scroll-behavior: smooth; }
+
+.arrow {
+  border: none;
+  cursor: pointer;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 100%;
+  background-color: #EBEBEB;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  font-size: 3rem;
+  color: black; }
+
+.results {
+  font-size: 1.2rem;
+  opacity: 0.9; }
+
+.looser {
+  font-size: 1rem;
+  opacity: 0.5; }
+
+@keyframes floating {
+  to {
+    transform: translate(0px, -2vh);
+    text-shadow: 0vh 0.5vh 10px #EBEBEB; } }
+
+body {
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  background-color: black;
+  grid-template-rows: repeat(2, 100vh) auto 10vh;
+  grid-template-columns: 1fr;
+  row-gap: 10vh;
+  width: 100vw; }
+  body section {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    width: 80vw; }
+  body #menu {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-row: 1;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: 80vh;
+    color: #EBEBEB; }
+    body #menu h2 {
+      font-size: 2rem;
+      height: 10vh; }
+    body #menu h1 {
+      padding-top: 5vh;
+      font-size: 3rem;
+      height: 15vh;
+      text-shadow: 0vh 0vh 5px #FFBE33;
+      animation-name: floating;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out; }
+    body #menu ul {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+      list-style: none;
+      height: 40vh;
+      color: #FFBE33; }
+  body #logIn {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    grid-row: 2;
+    padding-top: 30vh;
+    padding-bottom: 10vh;
+    height: 60vh;
+    color: #EBEBEB; }
+    body #logIn #userInput {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 40vh;
+      gap: 0px; }
+      body #logIn #userInput p {
+        height: 10vh; }
+      body #logIn #userInput #userName {
+        height: 2vh;
+        width: 25%;
+        padding: 1%;
+        font-size: 2rem;
+        background-color: black;
+        color: #FFBE33;
+        border: none;
+        border-bottom: dashed #FFBE33 0.3vh !important;
+        text-align: center;
+        transition: height 0.3s, border 0.3s, border-bottom 0.3s; }
+        body #logIn #userInput #userName:focus {
+          border-bottom: none;
+          border: solid #FFBE33 0.5vh !important;
+          height: 5vh; }
+  body #game {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: max-content;
+    grid-row: 3;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    gap: 5vh; }
+    body #game #options {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+      overflow: visible;
+      height: 20vh; }
+      body #game #options button {
+        height: auto;
+        max-width: 15%;
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 5rem;
+        color: #FFBE33;
+        transition: 1s; }
+        body #game #options button:hover {
+          transform: matrix(1.2, 0, 0, 1.2, 0, -5);
+          box-shadow: 0px 0px 10px #FFBE33; }
+    body #game #score {
+      color: #FEA82F;
+      height: auto;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      font-size: 1.5rem; }
+  body footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: #7A7D7D;
+    width: 100vw;
+    height: 10vh;
+    font-size: 1rem;
+    color: #FEA82F;
+    grid-row: 4; }
+    body footer p {
+      width: fit-content;
+      height: fit-content; }
+    body footer img {
+      width: auto;
+      max-height: 90%; }
