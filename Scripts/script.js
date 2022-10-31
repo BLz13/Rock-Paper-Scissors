@@ -1,110 +1,95 @@
-const adding =(a,b) => {
-
-    return a+b;
-
-}
-
-const substracting = (a,b) => {
-
-    return a-b;
-    
-}
-
-const divide = (a,b) => {
-    if (b === 0){
-        return console.log("u can't divide by 0")
-    }else{
-        return a/b;
-    }
-}
-
-const exponent = (a,b) => {
-    if ((a === 0) && (b === 0)){
-        return console.log("the result is indeterminate");
-    }else{
-        if (b === 0){
-            return 1;
-        }else{
-            a*(exponent(a,(b-1)))
-        }
-    }
-}
-
-const percentage3Variables = (a,b) => {
-    if ((b) === 0){
-        return console.log("u haven't play any game yet")
-    }else{
-        return Math.round((divide(a,b)*100));
-    }
-}
-
-function Compare(objet1,objet2){
-    if (objet1.gamesWon<objet2.gamesWon){
-        console.log("The highest score was: " + objet2.score + " and the winner is: "+objet2.userName);
-        return false;
-    }else{
-        console.log("The highest score was: " + objet1.score + " and the winner is: "+objet1.userName);
-        return true;
-    }
-}
-
-function LogIn(){
-    while ((selectedName == undefined) || (selectedName == "")){
-        selectedName = prompt("Enter your username, do not use any number or symbols");
-        if ((selectedName == undefined) || (selectedName == "")){
-            alert("wrong username, enter it again");
-        }else{
-            alert("welcome " + selectedName);
-        }
-    }
-}
-class User {
-
-    constructor (name) {
-        this.userName = name;
-        this.score = 0;
-        this.gamesWon = 0;
-        this.gamesTie = 0;
-    }
-    draw(){
-        this.score += 1;
-        this.gamesTie += 1;
-        gamesPlayed += 1;
-    }
-    win(){
-        this.score += 3;
-        this.gamesWon += 1;
-        gamesPlayed += 1;
-    }
-}
-
 let gamesPlayed = 0;
-let selectedName = undefined;
-LogIn();
+
+const sections = [document.getElementById("menu"), document.getElementById("logIn"), document.getElementById("game")];
+
+const arrowBtn = document.getElementsByClassName("arrow");
+
+const user1NameInput = document.getElementById("userName1");
+
+const user2NameInput = document.getElementById("userName2");
+
+const player1 = document.getElementById("player1");
+
+const player2 = document.getElementById("player2");
+
+const player1Score = document.getElementById("player1Score");
+
+const player2Score = document.getElementById("player2Score");
+
+let gamemode;
+
 const users = [];
-let user1 = new User (selectedName);
-let userPC = new User ("PC");
-/* por el momento no se tienen datos del juego asi que se va a simular 
-un ipotetico caso en el que el jugador jugo 10 paritdas, de las cuales:
-gano 2, empato 3 y perdio el resto, para testear las funciones hechas*/
-// ganar suma 3, empatar 1 y perder ninguno
-user1.win();
-user1.draw();
-userPC.draw();
-userPC.win();
-userPC.win();
-user1.draw()
-userPC.draw()
-user1.draw()
-userPC.draw()
-userPC.win();
-user1.win();
-userPC.win();
-userPC.win();
-console.log(user1);
-console.log(userPC);
-if (Compare(user1,userPC)){
-    console.log("U won: " + percentage3Variables(user1.gamesWon,gamesPlayed) + "% of the games played.");
-}else{
-    console.log("U lost: " + percentage3Variables(userPC.gamesWon,gamesPlayed) + "% of the games played.");
+
+let selectedName1 = "dksjuhfgkhdsgf";
+
+let selectedName2 = "PC";
+
+let user1 = new User (selectedName1);
+
+let user2 = new User (selectedName2);
+
+for (let i = 0; i<arrowBtn.length; i++){
+    arrowBtn[i].onclick = () => {
+        let indexActive;
+        if (arrowBtn[i].id === "singlePlayerArrow"){
+            gamemode = 1;
+        }
+        if (arrowBtn[i].id === "multiPlayerArrow"){
+            gamemode = 2;
+        }
+        if (gamemode === 1){
+            player2.childNodes[0].textContent = (user2.name) + ":";
+            player2Score.innerText = user2.score;
+            user2NameInput.value = user2.name;
+        } else {
+            user2NameInput.removeAttribute("disabled");
+        }
+        for (let i = 0; i<sections.length; i++){
+            if (sections[i].className == "active"){
+                 indexActive = i;
+                break
+            }
+        }
+        if (indexActive === 0){
+            sections[0].style.animation = "fadeOut 2s ease-in 0s 1 normal forwards";
+            sections[1].style.animation = "fadeIn 2s ease-in 0s 1 normal forwards";
+            sections[0].className = "inactive";
+            sections[1].className = "active";
+        } else {
+            if (indexActive === 1){
+                if (gamemode === 2){
+                    if ((!(user1.name === "dksjuhfgkhdsgf")) && (!(user2.name === "PC"))){ 
+                        sections[1].style.animation = "fadeOut 2s ease-in 0s 1 normal forwards";
+                        sections[2].style.animation = "fadeIn 2s ease-in 0s 1 normal forwards";
+                        sections[1].className = "inactive";
+                        sections[2].className = "active";
+                    }
+                } else {
+                    if (!(user1.name === "dksjuhfgkhdsgf")){ 
+                        sections[1].style.animation = "fadeOut 2s ease-in 0s 1 normal forwards";
+                        sections[2].style.animation = "fadeIn 2s ease-in 0s 1 normal forwards";
+                        sections[1].className = "inactive";
+                        sections[2].className = "active";
+                    }
+                }
+            }
+        }
+    }
 }
+
+user1NameInput.onchange = () => {
+    selectedName1 = user1NameInput.value;
+    user1.name = selectedName1;
+    player1.childNodes[0].textContent = user1.name + ":";
+    player1Score.innerText = user1.score;
+    localStorage.setItem("user1", JSON.stringify(user1));
+    //la idea es recuperar los datos del local storage en caso de reiniciar
+};
+
+user2NameInput.onchange = () => {
+    selectedName2 = user2NameInput.value;
+    user2.name = selectedName2;
+    player2.childNodes[0].textContent = (user2.name) + ":";
+    player2Score.innerText = user2.score;
+    localStorage.setItem("user2", JSON.stringify(user2));
+};
