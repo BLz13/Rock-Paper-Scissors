@@ -17,9 +17,10 @@ class User {
     }
 }
 
-class Weapons {
-    constructor (weapon,beats) {
-        this.wepon = weapon;
+class Weapon {
+    constructor (weapon,beats,img) {
+        this.weapon = weapon;
         this.beats = beats;
+        this.img = img;
     }
 }

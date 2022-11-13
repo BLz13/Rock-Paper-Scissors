@@ -2,7 +2,7 @@ let gamesPlayed = 0;
 
 const sections = [document.getElementById("menu"), document.getElementById("logIn"), document.getElementById("game")];
 
-const arrowBtn = document.getElementsByClassName("arrow");
+const arrowButtons = document.querySelectorAll(".arrow");
 
 const user1NameInput = document.getElementById("userName1");
 
@@ -28,21 +28,20 @@ let user1 = new User (selectedName1);
 
 let user2 = new User (selectedName2);
 
-for (let i = 0; i<arrowBtn.length; i++){
-    arrowBtn[i].onclick = () => {
+arrowButtons.forEach( arrowButton => {  
+    arrowButton.onclick = () => {
         let indexActive;
-        if (arrowBtn[i].id === "singlePlayerArrow"){
-            gamemode = 1;
-        }
-        if (arrowBtn[i].id === "multiPlayerArrow"){
-            gamemode = 2;
-        }
-        if (gamemode === 1){
-            player2.childNodes[0].textContent = (user2.name) + ":";
-            player2Score.innerText = user2.score;
-            user2NameInput.value = user2.name;
-        } else {
-            user2NameInput.removeAttribute("disabled");
+        switch (arrowButton.id) {
+            case "singlePlayerArrow" :
+                gamemode = 1;
+                player2.childNodes[0].textContent = (user2.name) + ":";
+                player2Score.innerText = user2.score;
+                user2NameInput.value = user2.name;
+                break;
+            case "multiPlayerArrow" :
+                gamemode = 2;
+                user2NameInput.removeAttribute("disabled");
+                break;
         }
         for (let i = 0; i<sections.length; i++){
             if (sections[i].className == "active"){
@@ -50,13 +49,14 @@ for (let i = 0; i<arrowBtn.length; i++){
                 break
             }
         }
-        if (indexActive === 0){
-            sections[0].style.animation = "fadeOut 2s ease-in 0s 1 normal forwards";
-            sections[1].style.animation = "fadeIn 2s ease-in 0s 1 normal forwards";
-            sections[0].className = "inactive";
-            sections[1].className = "active";
-        } else {
-            if (indexActive === 1){
+        switch (indexActive) {
+            case 0 :
+                sections[0].style.animation = "fadeOut 2s ease-in 0s 1 normal forwards";
+                sections[1].style.animation = "fadeIn 2s ease-in 0s 1 normal forwards";
+                sections[0].className = "inactive";
+                sections[1].className = "active";
+                break;
+            case 1 :
                 if (gamemode === 2){
                     if ((!(user1.name === "dksjuhfgkhdsgf")) && (!(user2.name === "PC"))){ 
                         sections[1].style.animation = "fadeOut 2s ease-in 0s 1 normal forwards";
@@ -72,10 +72,10 @@ for (let i = 0; i<arrowBtn.length; i++){
                         sections[2].className = "active";
                     }
                 }
-            }
+                break;
         }
     }
-}
+});
 
 user1NameInput.onchange = () => {
     selectedName1 = user1NameInput.value;

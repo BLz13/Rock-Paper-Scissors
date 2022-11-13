@@ -164,62 +164,57 @@ body {
       height: 40vh;
       color: #FFBE33; }
     body #menu div {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 10vh;
+      row-gap: 1vh;
+      color: #FFBE33; }
+  body #logIn {
+    display: flex;
+    flex-flow: column nowrap; }
+    body #logIn #userInput {
       display: grid;
       align-content: center !important;
       justify-content: center !important;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      height: 10vh;
       row-gap: 1vh;
+      height: 60vh;
       color: #FFBE33; }
-      body #menu div #singlePlayerText {
+      body #logIn #userInput input {
+        height: 2vh;
+        width: 90%;
+        padding: 1%;
+        font-size: 2rem;
+        background-color: black;
+        color: #FFBE33;
+        border: none;
+        border-bottom: dashed #FFBE33 0.3vh !important;
+        text-align: center;
+        transition: height 0.3s, border 0.3s, border-bottom 0.3s; }
+        body #logIn #userInput input:focus {
+          border-bottom: none;
+          border: solid #FFBE33 0.5vh !important;
+          height: 5vh; }
+      body #logIn #userInput #userName1Text {
         grid-column: 1;
         grid-row: 1; }
-      body #menu div #multiPlayerText {
+      body #logIn #userInput #userName2Text {
         grid-column: 2;
         grid-row: 1; }
-      body #menu div #singlePlayerArrow {
+      body #logIn #userInput #userName1 {
         grid-column: 1;
         grid-row: 2; }
-      body #menu div #multiPlayerArrow {
+      body #logIn #userInput #userName2 {
         grid-column: 2;
         grid-row: 2; }
-  body #logIn #userInput {
-    display: grid;
-    align-content: center !important;
-    justify-content: center !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 1vh;
-    height: 60vh;
-    color: #FFBE33; }
-    body #logIn #userInput input {
-      height: 2vh;
-      width: 90%;
-      padding: 1%;
-      font-size: 2rem;
-      background-color: black;
+    body #logIn #buttonNext {
       color: #FFBE33;
-      border: none;
-      border-bottom: dashed #FFBE33 0.3vh !important;
-      text-align: center;
-      transition: height 0.3s, border 0.3s, border-bottom 0.3s; }
-      body #logIn #userInput input:focus {
-        border-bottom: none;
-        border: solid #FFBE33 0.5vh !important;
-        height: 5vh; }
-    body #logIn #userInput #userName1Text {
-      grid-column: 1;
-      grid-row: 1; }
-    body #logIn #userInput #userName2Text {
-      grid-column: 2;
-      grid-row: 1; }
-    body #logIn #userInput #userName1 {
-      grid-column: 1;
-      grid-row: 2; }
-    body #logIn #userInput #userName2 {
-      grid-column: 2;
-      grid-row: 2; }
+      height: auto; }
+    body #logIn button {
+      height: 5vh; }
   body #game {
     overflow-y: scroll;
     height: max-content;
