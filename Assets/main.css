@@ -1,17 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
-* {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 100%;
-  font-size: 100%;
-  font-family: "Silkscreen" !important; }
-
-body {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden; }
-
 @keyframes hoverArrow1 {
   from {
     fill: #FEA82F;
@@ -105,27 +92,71 @@ body {
   opacity: 0;
   z-index: 1; }
 
-.results {
-  font-size: 1.2rem;
+@keyframes apear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.hidden {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-direction: reverse;
+  animation-name: apear; }
+
+.winner {
+  width: fit-content;
+  height: 6rem;
   opacity: 0.9; }
 
 .looser {
-  font-size: 1rem;
-  opacity: 0.5; }
+  width: fit-content;
+  height: 4rem;
+  padding-top: 1rem;
+  opacity: 0.3; }
+
+.draw {
+  width: fit-content;
+  height: 5rem;
+  padding-top: 1rem;
+  opacity: 0.7; }
+
+.resultsText {
+  padding-top: 2rem;
+  height: 4rem !important; }
+
+.resultsBox {
+  font-size: 1.5rem;
+  height: 6rem;
+  color: #FFBE33;
+  width: auto; }
+
+.spin {
+  transition: transform 1s;
+  transform: rotate(360); }
 
 ::-webkit-scrollbar {
   opacity: 0; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-family: "Silkscreen" !important; }
 
 @keyframes floating {
   to {
     transform: translateY(-2vh);
     text-shadow: 0vh 0.5vh 10px #EBEBEB; } }
 
-@keyframes hoverTool {
-  to {
-    transform: translateY(-2vh); } }
-
 body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   text-transform: capitalize;
   text-align: center;
   background-color: black;
@@ -216,15 +247,14 @@ body {
     body #logIn button {
       height: 5vh; }
   body #game {
-    overflow-y: scroll;
-    height: max-content;
+    height: auto;
+    overflow-y: auto;
     gap: 5vh; }
     body #game #options {
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-evenly;
       align-items: center;
-      overflow: visible;
       height: 20vh; }
       body #game #options .weapons {
         height: auto;
@@ -236,26 +266,34 @@ body {
         color: #FFBE33;
         transition: 1s; }
         body #game #options .weapons:hover {
-          animation-name: hoverTool;
-          animation-duration: 1s;
-          animation-fill-mode: both;
-          animation-iteration-count: infinite;
-          animation-direction: alternate; }
-    body #game #score {
-      color: #FEA82F;
+          transform: scale(1.5); }
+    body #game #scoreArea {
       height: auto;
       display: grid;
       justify-items: center;
       align-items: center;
       grid-template-columns: repeat(2, 1fr);
-      font-size: 1.5rem; }
-  body footer {
+      font-size: 1.5rem;
+      height: 10vh;
+      color: #FEA82F; }
+    body #game #resultsArea {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-content: center !important;
+      justify-content: center !important;
+      overflow-y: auto !important; }
+      body #game #resultsArea .results {
+        overflow: visible;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1vh; }
+  body sidebar {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    position: absolute;
+    position: fixed;
     background-color: #020202;
     left: 0%;
     top: 0%;
@@ -263,9 +301,15 @@ body {
     height: 100vh;
     font-size: 1rem;
     color: #FEA82F; }
-    body footer p {
+    body sidebar a {
+      max-width: 90%;
+      height: 10%; }
+      body sidebar a img {
+        max-width: 100%;
+        height: auto; }
+    body sidebar p {
       width: fit-content;
       height: fit-content; }
-    body footer img {
+    body sidebar img {
       max-width: 90%;
       height: auto; }

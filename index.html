@@ -299,29 +299,29 @@
                     <button class="weapons" data-weapon="paper"><img src="./Images/Paper.png" alt="🖐"></button>
                     <button class="weapons" data-weapon="rock"><img src="./Images/Rock.png" alt="👊"></button>
                 </div>
-                <div id="score">
+                <div id="scoreArea">
                     <div id="player1">
-                        1
-                        <div id="player1Score">
-                            0
+                        <div class="score">
                         </div>
                     </div>
                     <div id="player2">
-                        2
-                        <div id="player2Score">
-                            0
+                        <div class="score">
                         </div>
                     </div>
                 </div>
-                <div class="results"></div>
-                <div class="results"></div>
+                <div id="resultsArea">
+                    <div class="results"></div>
+                    <div class="results"></div>
+                    <div class="results"></div>
+                </div>
             </section>
-            <!-- <button>Save Names</button> la idea es usar el boton en una especie de 'save progress' para recuperar los datos del local storage en caso de reiniciar -->
-            <footer>
-                <img src="./Images/Icon.png" alt="Icon">
+            <sidebar>
+                <a id="refresh" href="./index.html">
+                    <img src="./Images/Icon.png" alt="Icon">
+                </a>
                 <p>Rock, Paper, Scissors<br>Made By:BLz13</p>
                 <img src="./Images/QR.svg" alt="Gotcha U">
-            </footer>
+            </sidebar>
         </body>
 
     </html>

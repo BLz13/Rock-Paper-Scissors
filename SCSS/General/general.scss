@@ -2,21 +2,6 @@
 
 $bitFont: 'Silkscreen';
 
-*{
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    height: 100%;
-    font-size: 100%;
-    font-family: $bitFont !important;
-}
-
-body{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
 @keyframes hoverArrow1 {
     from{
         fill: $c4;
@@ -135,14 +120,61 @@ body{
     z-index: 1;
 }
 
-.results{
-    font-size: 1.2rem;
+@keyframes apear {
+
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+
+}
+
+.hidden{
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-direction: reverse;
+    animation-name: apear;
+}
+
+.winner{
+    width: fit-content;
+    height:6rem;
     opacity: 0.9;
 }
 
 .looser{
-    font-size: 1rem;
-    opacity: 0.5;
+    width: fit-content;
+    height: 4rem;
+    padding-top: 1rem;
+    opacity: 0.3;
+}
+
+.draw{
+    width: fit-content;
+    height: 5rem;
+    padding-top: 1rem;
+    opacity: 0.7;
+}
+
+.resultsText{
+    padding-top: 2rem;
+    height: 4rem !important;
+}
+
+.resultsBox{
+    font-size: 1.5rem;
+    height: 6rem;
+    color: $c3;
+    width: auto;
+}
+
+.spin {
+    transition: transform 1s;
+    transform: rotate(360);
 }
 
 ::-webkit-scrollbar{
