@@ -180,3 +180,16 @@ $bitFont: 'Silkscreen';
 ::-webkit-scrollbar{
     opacity: 0;
 }
+
+.swal2-title {
+    padding: 0% !important;
+}
+
+.swal2-icon-content {
+    display: block !important;
+}
+
+.swal2-actions {
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+}

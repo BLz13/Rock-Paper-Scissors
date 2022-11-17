@@ -16,10 +16,6 @@ const resultsArea = document.querySelectorAll(".results");
 
 const scoreArea = document.querySelectorAll(".score");
 
-for (let i = 0; i < scoreArea.length; i++) {
-    scoreArea[i].innerText = users[i].score;
-}
-
 weaponsButtons.forEach( weaponButton => {
     weaponButton.onclick = () => {
         const attackName = weaponButton.dataset.weapon;
@@ -29,6 +25,7 @@ weaponsButtons.forEach( weaponButton => {
         printResult(userAttack,cpuAttack,resultsArea);
         showResults();
         printScores();
+        localStorage.setItem("users", JSON.stringify(users));
     }
 })
 
