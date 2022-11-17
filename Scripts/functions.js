@@ -1,49 +1,100 @@
-const adding =(a,b) => {
-
-    return a+b;
-
+function recoverData(usersData) {
+    Swal.fire({
+        title:`Are you ${usersData[0].name}?`,
+        icon: 'question',
+        backdrop: `rgba(0,0,0)`,
+        color: '#fea82f',
+        background: '#0000',
+        confirmButtonColor: '#ffbe33',
+        iconColor: '#ffbe33',
+        denyButtonColor: '#7a7d7a',
+        confirmButtonText: "I am",
+        denyButtonText: "I ain't",
+        showDenyButton: true,
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            users = [
+                user1 = new User (usersData[0].name,usersData[0].score),
+                user2 = new User (usersData[1].name,usersData[1].score)
+            ]
+            sections[0].className = "inactive";
+            sections[1].className = "inactive";
+            sections[2].style.animation = "fadeIn 2s ease-in 0s 1 normal forwards";
+            sections[2].className = "active";
+            player1.childNodes[0].textContent = (users[0].name) + ":";
+            player2.childNodes[0].textContent = (users[1].name) + ":";
+            document.getElementById("userName2").value = users[1].name;
+            serchUserImg ();
+        } else {
+            user1 = new User ("dksjuhfgkhdsgf",0);
+            user2 = new User ("PC",0);
+            users = [user1, user2];
+            player2.childNodes[0].textContent = (users[1].name) + ":";
+            document.getElementById("userName2").value = users[1].name;
+            localStorage.setItem("users", null);
+        };
+        for (let i = 0; i < scoreArea.length; i++) {
+            scoreArea[i].innerHTML = `<p>${users[i].score}</p>`;
+        };
+    })
 }
 
-const substracting = (a,b) => {
-
-    return a-b;
-    
+function attackCPU () {
+    let randomAttack = Math.floor (Math.random() * weapons.length);
+    return (weapons[randomAttack]);
 }
 
-const divide = (a,b) => {
-    if (b === 0){
-        return console.log("u can't divide by 0")
-    }else{
-        return a/b;
-    }
-}
-
-const exponent = (a,b) => {
-    if ((a === 0) && (b === 0)){
-        return console.log("the result is indeterminate");
-    }else{
-        if (b === 0){
-            return 1;
-        }else{
-            a*(exponent(a,(b-1)))
+function result(userAttack,cpuAttack) {
+    if (userAttack.weapon === cpuAttack.weapon) { //cheks for a draw
+        users[0].draw();
+        users[1].draw();
+    } else {
+        if (userAttack.beats === cpuAttack.weapon) { // cheks if user1 won
+            users[0].win();
+        } else { 
+            users[1].win();
         }
     }
 }
 
-const percentage3Variables = (a,b) => {
-    if ((b) === 0){
-        return console.log("u haven't play any game yet")
-    }else{
-        return Math.round((divide(a,b)*100));
+function printResult(userAttack,cpuAttack,resultsArea) {
+    resultsArea.forEach( eachArea => {
+        const divBox = document.createElement("div");
+        const divImg = document.createElement("img");
+        divBox.setAttribute("class", "resultsBox hidden");
+        divBox.appendChild(divImg);
+        eachArea.insertAdjacentElement("afterbegin", divBox)
+    })
+    resultsArea[0].firstChild.firstChild.setAttribute("src", userAttack.img);
+    resultsArea[2].firstChild.firstChild.setAttribute("src", cpuAttack.img);
+    if (userAttack.weapon === cpuAttack.weapon) { //cheks for a draw
+        resultsArea[1].firstChild.innerText = "draw"
+        resultsArea[0].firstChild.firstChild.classList.add("draw");
+        resultsArea[2].firstChild.firstChild.classList.add("draw");
+    } else {
+        if (userAttack.beats === cpuAttack.weapon) { // cheks if user1 won
+            resultsArea[1].firstChild.innerText = ` ${user1.name} wins `
+            resultsArea[0].firstChild.firstChild.classList.toggle("winner");
+            resultsArea[2].firstChild.firstChild.classList.toggle("looser");
+        } else {
+            resultsArea[1].firstChild.innerText = ` ${user2.name} wins `
+            resultsArea[0].firstChild.firstChild.classList.toggle("looser");
+            resultsArea[2].firstChild.firstChild.classList.toggle("winner");
+        }
     }
+    resultsArea[1].firstChild.classList.toggle("resultsText")
 }
 
-function Compare(objet1,objet2){
-    if (objet1.gamesWon<objet2.gamesWon){
-        console.log("The highest score was: " + objet2.score + " and the winner is: "+objet2.userName);
-        return false;
-    }else{
-        console.log("The highest score was: " + objet1.score + " and the winner is: "+objet1.userName);
-        return true;
-    }
+function showResults() {
+    document.querySelectorAll(".hidden").forEach( result => {
+        result.style.animationDirection = "normal";
+    })
+}
+
+function printScores() {
+    for (let i = 0; i < scoreArea.length; i++) {
+        scoreArea[i].innerHTML = `<p>${users[i].score}</p>`;
+    }    
 }

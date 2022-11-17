@@ -149,6 +149,12 @@
   flex-wrap: nowrap !important;
   width: 100% !important; }
 
+.userImg {
+  height: 10vh;
+  width: auto;
+  border-radius: 100%;
+  image-rendering: optimizeSpeed; }
+
 * {
   margin: 0px;
   padding: 0px;
@@ -260,6 +266,18 @@ body {
     height: auto;
     overflow-y: auto;
     gap: 5vh; }
+    body #game #player1 {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1vw; }
+    body #game #player2 {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1vw; }
     body #game #options {
       display: flex;
       flex-flow: row nowrap;
@@ -297,6 +315,12 @@ body {
         display: flex;
         flex-flow: column nowrap;
         gap: 1vh; }
+    body #game .score {
+      height: fit-content;
+      width: fit-content; }
+      body #game .score p {
+        height: fit-content;
+        width: fit-content; }
   body sidebar {
     display: flex;
     flex-flow: column nowrap;

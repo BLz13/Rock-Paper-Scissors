@@ -193,3 +193,10 @@ $bitFont: 'Silkscreen';
     flex-wrap: nowrap !important;
     width: 100% !important;
 }
+
+.userImg {
+    height: 10vh;
+    width: auto;
+    border-radius: 100%;
+    image-rendering: optimizeSpeed;
+}
