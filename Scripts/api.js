@@ -25,3 +25,4 @@ function serchUserImg () {
 
 
 //easter egg si se ingresa como nombre de usuario el id de una de las razas de gatos, esta hace que se cargue una como img de usuario
+// razas ejemplo para testear: aege, sphy, abys.
