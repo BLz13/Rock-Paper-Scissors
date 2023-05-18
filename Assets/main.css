@@ -2,158 +2,195 @@
 @keyframes hoverArrow1 {
   from {
     fill: #FEA82F;
-    opacity: 1; }
+    opacity: 1;
+  }
   to {
     fill: #FFBE33;
-    opacity: 0; } }
-
+    opacity: 0;
+  }
+}
 @keyframes hoverArrow2 {
   from {
     fill: #FFBE33;
-    opacity: 0; }
+    opacity: 0;
+  }
   to {
     fill: #FEA82F;
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 @keyframes hoverArrow3 {
   from {
     fill: #FFBE33;
-    opacity: 0; }
+    opacity: 0;
+  }
   to {
     fill: #FEA82F;
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 .arrow {
   width: 100%;
-  background-color: #00000000 !important; }
-  .arrow svg {
-    cursor: pointer;
-    height: 5vh;
-    width: 5vh; }
-    .arrow svg #arrow1 {
-      fill: #7A7D7D;
-      opacity: 1; }
-    .arrow svg #arrow2 {
-      fill: #7A7D7D;
-      opacity: 0; }
-    .arrow svg #arrow3 {
-      fill: #7A7D7D;
-      opacity: 0; }
-    .arrow svg:hover #arrow1 {
-      animation-delay: 0.1s;
-      animation-duration: 0.5s;
-      animation-name: hoverArrow1;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      animation-timing-function: ease-in;
-      animation-fill-mode: both; }
-    .arrow svg:hover #arrow2 {
-      animation-delay: 0.1s;
-      animation-duration: 0.5s;
-      animation-name: hoverArrow2;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      animation-timing-function: ease-in;
-      animation-fill-mode: both; }
-    .arrow svg:hover #arrow3 {
-      animation-delay: 0.3s;
-      animation-duration: 0.5s;
-      animation-name: hoverArrow3;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      animation-timing-function: ease-in;
-      animation-fill-mode: both; }
+  border: none;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.arrow svg {
+  cursor: pointer;
+  height: 5vh;
+  width: 5vh;
+}
+.arrow svg #arrow1 {
+  fill: #7A7D7D;
+  opacity: 1;
+}
+.arrow svg #arrow2 {
+  fill: #7A7D7D;
+  opacity: 0;
+}
+.arrow svg #arrow3 {
+  fill: #7A7D7D;
+  opacity: 0;
+}
+.arrow svg:hover #arrow1 {
+  animation-delay: 0.1s;
+  animation-duration: 0.5s;
+  animation-name: hoverArrow1;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+.arrow svg:hover #arrow2 {
+  animation-delay: 0.1s;
+  animation-duration: 0.5s;
+  animation-name: hoverArrow2;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+.arrow svg:hover #arrow3 {
+  animation-delay: 0.3s;
+  animation-duration: 0.5s;
+  animation-name: hoverArrow3;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
 
 @keyframes fadeOut {
   from {
     top: 0vh;
     opacity: 1;
-    z-index: 3; }
+    z-index: 3;
+  }
   to {
     top: -100vh;
     opacity: 0;
-    z-index: 1; } }
-
+    z-index: 1;
+  }
+}
 @keyframes fadeIn {
   from {
     top: 100vh;
     opacity: 0;
-    z-index: 1; }
+    z-index: 1;
+  }
   to {
     top: 0vh;
     opacity: 1;
-    z-index: 3; } }
-
+    z-index: 3;
+  }
+}
 .active {
   opacity: 1;
-  z-index: 3; }
+  z-index: 3;
+}
 
 .inactive {
   opacity: 0;
-  z-index: 1; }
+  z-index: 1;
+}
 
-@keyframes apear {
+@keyframes appear {
   from {
-    opacity: 0; }
+    opacity: 0;
+  }
   to {
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 .hidden {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-play-state: running;
   animation-direction: reverse;
-  animation-name: apear; }
+  animation-name: appear;
+}
 
 .winner {
   width: fit-content;
+  aspect-ratio: 1;
   height: 6rem;
-  opacity: 0.9; }
+  opacity: 0.9;
+}
 
 .looser {
   width: fit-content;
   height: 4rem;
   padding-top: 1rem;
-  opacity: 0.3; }
+  opacity: 0.3;
+  aspect-ratio: 1;
+}
 
 .draw {
   width: fit-content;
   height: 5rem;
   padding-top: 1rem;
-  opacity: 0.7; }
+  opacity: 0.7;
+  aspect-ratio: 1;
+}
 
 .resultsText {
   padding-top: 2rem;
-  height: 4rem !important; }
+  height: 4rem !important;
+}
 
 .resultsBox {
   font-size: 1.5rem;
   height: 6rem;
   color: #FFBE33;
-  width: auto; }
+}
 
 .spin {
   transition: transform 1s;
-  transform: rotate(360); }
+  transform: rotate(360);
+}
 
 ::-webkit-scrollbar {
-  opacity: 0; }
+  opacity: 0;
+}
 
 .swal2-title {
-  padding: 0% !important; }
+  padding: 0% !important;
+}
 
 .swal2-icon-content {
-  display: block !important; }
+  display: block !important;
+}
 
 .swal2-actions {
   flex-wrap: nowrap !important;
-  width: 100% !important; }
+  width: 100% !important;
+}
 
 .userImg {
   height: 10vh;
   width: auto;
   border-radius: 100%;
-  image-rendering: optimizeSpeed; }
+  image-rendering: optimizeSpeed;
+}
 
 * {
   margin: 0px;
@@ -161,13 +198,15 @@
   width: 100%;
   height: 100%;
   font-size: 100%;
-  font-family: "Silkscreen" !important; }
+  font-family: "Silkscreen" !important;
+}
 
 @keyframes floating {
   to {
     transform: translateY(-2vh);
-    text-shadow: 0vh 0.5vh 10px #EBEBEB; } }
-
+    text-shadow: 0vh 0.5vh 10px #EBEBEB;
+  }
+}
 body {
   width: 100%;
   height: 100vh;
@@ -176,174 +215,209 @@ body {
   text-transform: capitalize;
   text-align: center;
   background-color: black;
-  width: 100vw; }
-  body section {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    position: absolute;
-    left: 10vw;
-    padding: 10vh 20vw 10vh 10vw;
-    width: 70vw;
-    height: 80vh; }
-  body #menu {
-    color: #EBEBEB; }
-    body #menu h2 {
-      font-size: 2rem;
-      height: 10vh; }
-    body #menu h1 {
-      padding-top: 5vh;
-      font-size: 3rem;
-      height: 15vh;
-      text-shadow: 0vh 0vh 5px #FFBE33;
-      animation-name: floating;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      animation-timing-function: ease-in-out; }
-    body #menu ul {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: space-evenly;
-      align-items: center;
-      list-style: none;
-      height: 40vh;
-      color: #FFBE33; }
-    body #menu div {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: space-evenly;
-      align-items: center;
-      height: 10vh;
-      row-gap: 1vh;
-      color: #FFBE33; }
-  body #logIn {
-    display: flex;
-    flex-flow: column nowrap; }
-    body #logIn #userInput {
-      display: grid;
-      align-content: center !important;
-      justify-content: center !important;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      row-gap: 1vh;
-      height: 60vh;
-      color: #FFBE33; }
-      body #logIn #userInput input {
-        height: 2vh;
-        width: 90%;
-        padding: 1%;
-        font-size: 2rem;
-        background-color: black;
-        color: #FFBE33;
-        border: none;
-        border-bottom: dashed #FFBE33 0.3vh !important;
-        text-align: center;
-        transition: height 0.3s, border 0.3s, border-bottom 0.3s; }
-        body #logIn #userInput input:focus {
-          border-bottom: none;
-          border: solid #FFBE33 0.5vh !important;
-          height: 5vh; }
-      body #logIn #userInput #userName1Text {
-        grid-column: 1;
-        grid-row: 1; }
-      body #logIn #userInput #userName2Text {
-        grid-column: 2;
-        grid-row: 1; }
-      body #logIn #userInput #userName1 {
-        grid-column: 1;
-        grid-row: 2; }
-      body #logIn #userInput #userName2 {
-        grid-column: 2;
-        grid-row: 2; }
-    body #logIn #buttonNext {
-      color: #FFBE33;
-      height: auto; }
-    body #logIn button {
-      height: 5vh; }
-  body #game {
-    height: auto;
-    overflow-y: auto;
-    gap: 5vh; }
-    body #game #player1 {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-      gap: 1vw; }
-    body #game #player2 {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-      gap: 1vw; }
-    body #game #options {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-evenly;
-      align-items: center;
-      height: 20vh; }
-      body #game #options .weapons {
-        height: auto;
-        background-color: #00000000;
-        border: none;
-        cursor: pointer;
-        max-width: 15%;
-        font-size: 5rem;
-        color: #FFBE33;
-        transition: 1s; }
-        body #game #options .weapons:hover {
-          transform: scale(1.5); }
-    body #game #scoreArea {
-      height: auto;
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      grid-template-columns: repeat(2, 1fr);
-      font-size: 1.5rem;
-      height: 10vh;
-      color: #FEA82F; }
-    body #game #resultsArea {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-content: center !important;
-      justify-content: center !important;
-      overflow-y: auto !important; }
-      body #game #resultsArea .results {
-        overflow: visible;
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 1vh; }
-    body #game .score {
-      height: fit-content;
-      width: fit-content; }
-      body #game .score p {
-        height: fit-content;
-        width: fit-content; }
-  body sidebar {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    position: fixed;
-    background-color: #020202;
-    left: 0%;
-    top: 0%;
-    width: 10vw;
-    height: 100vh;
-    font-size: 1rem;
-    color: #FEA82F; }
-    body sidebar a {
-      max-width: 90%;
-      height: 10%; }
-      body sidebar a img {
-        max-width: 100%;
-        height: auto; }
-    body sidebar p {
-      width: fit-content;
-      height: fit-content; }
-    body sidebar img {
-      max-width: 90%;
-      height: auto; }
+  width: 100vw;
+}
+body section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  left: 10vw;
+  padding: 10vh 20vw 10vh 10vw;
+  width: 70vw;
+  height: 80vh;
+}
+body #menu {
+  color: #EBEBEB;
+}
+body #menu h2 {
+  font-size: 2rem;
+  height: 10vh;
+}
+body #menu h1 {
+  padding-top: 5vh;
+  font-size: 3rem;
+  height: 15vh;
+  text-shadow: 0vh 0vh 5px #FFBE33;
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+body #menu ul {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  height: 40vh;
+  color: #FFBE33;
+}
+body #menu div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10vh;
+  row-gap: 1vh;
+  color: #FFBE33;
+}
+body #logIn {
+  display: flex;
+  flex-flow: column nowrap;
+}
+body #logIn #userInput {
+  display: grid;
+  align-content: center !important;
+  justify-content: center !important;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 1vh;
+  height: 60vh;
+  color: #FFBE33;
+}
+body #logIn #userInput input {
+  height: 2vh;
+  width: 90%;
+  padding: 1%;
+  font-size: 2rem;
+  background-color: black;
+  color: #FFBE33;
+  border: none;
+  border-bottom: dashed #FFBE33 0.3vh !important;
+  text-align: center;
+  transition: height 0.3s, border 0.3s, border-bottom 0.3s;
+}
+body #logIn #userInput input:focus {
+  border-bottom: none;
+  border: solid #FFBE33 0.5vh !important;
+  height: 5vh;
+}
+body #logIn #userInput #userName1Text {
+  grid-column: 1;
+  grid-row: 1;
+}
+body #logIn #userInput #userName2Text {
+  grid-column: 2;
+  grid-row: 1;
+}
+body #logIn #userInput #userName1 {
+  grid-column: 1;
+  grid-row: 2;
+}
+body #logIn #userInput #userName2 {
+  grid-column: 2;
+  grid-row: 2;
+}
+body #logIn #buttonNext {
+  color: #FFBE33;
+  height: auto;
+}
+body #logIn button {
+  height: 5vh;
+}
+body #game {
+  height: auto;
+  overflow-y: auto;
+  gap: 5vh;
+}
+body #game #player1 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+body #game #player2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+body #game #options {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh;
+}
+body #game #options .weapons {
+  height: auto;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  max-width: 15%;
+  font-size: 5rem;
+  color: #FFBE33;
+  transition: 1s;
+}
+body #game #options .weapons:hover {
+  transform: scale(1.5);
+}
+body #game #scoreArea {
+  height: auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1.5rem;
+  height: 10vh;
+  color: #FEA82F;
+}
+body #game #resultsArea {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center !important;
+  justify-content: center !important;
+  overflow-y: visible !important;
+}
+body #game #resultsArea .results {
+  overflow: visible;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1vh;
+}
+body #game .score {
+  height: fit-content;
+  width: fit-content;
+}
+body #game .score p {
+  height: fit-content;
+  width: fit-content;
+}
+body sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  background-color: rgb(2, 2, 2);
+  left: 0%;
+  top: 0%;
+  width: 10vw;
+  height: 100vh;
+  font-size: 1rem;
+  color: #FEA82F;
+}
+body sidebar a {
+  max-width: 90%;
+  height: 10%;
+}
+body sidebar a img {
+  max-width: 100%;
+  height: auto;
+}
+body sidebar p {
+  width: fit-content;
+  height: fit-content;
+}
+body sidebar img {
+  max-width: 90%;
+  height: auto;
+}
+
+/*# sourceMappingURL=main.css.map */

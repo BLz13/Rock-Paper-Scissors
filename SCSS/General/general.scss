@@ -37,6 +37,7 @@ $bitFont: 'Silkscreen';
 
 .arrow{
     width: 100%;
+    border: none;
     background-color: #00000000 !important;
     svg{
         cursor: pointer;
@@ -120,7 +121,7 @@ $bitFont: 'Silkscreen';
     z-index: 1;
 }
 
-@keyframes apear {
+@keyframes appear {
 
     from{
         opacity: 0;
@@ -137,11 +138,12 @@ $bitFont: 'Silkscreen';
     animation-fill-mode: forwards;
     animation-play-state: running;
     animation-direction: reverse;
-    animation-name: apear;
+    animation-name: appear;
 }
 
 .winner{
     width: fit-content;
+    aspect-ratio: 1;
     height:6rem;
     opacity: 0.9;
 }
@@ -151,6 +153,7 @@ $bitFont: 'Silkscreen';
     height: 4rem;
     padding-top: 1rem;
     opacity: 0.3;
+    aspect-ratio: 1;
 }
 
 .draw{
@@ -158,6 +161,7 @@ $bitFont: 'Silkscreen';
     height: 5rem;
     padding-top: 1rem;
     opacity: 0.7;
+    aspect-ratio: 1;
 }
 
 .resultsText{
@@ -169,7 +173,6 @@ $bitFont: 'Silkscreen';
     font-size: 1.5rem;
     height: 6rem;
     color: $c3;
-    width: auto;
 }
 
 .spin {
